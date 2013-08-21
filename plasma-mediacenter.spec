@@ -9,6 +9,7 @@ Source0:	ftp://ftp.kde.org/pub/kde/stable/%{name}/%{version}/src/%{name}-%{versi
 BuildRequires:	qt-mobility-devel
 BuildRequires:	qt4-devel
 BuildRequires:	kdelibs4-devel
+BuildRequires:	kdebase4-workspace-devel
 BuildRequires:	nepomuk-core-devel
 BuildRequires:	pkgconfig(taglib)
 Requires:	qt-mobility
