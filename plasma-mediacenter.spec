@@ -1,14 +1,15 @@
-Name:		plasma-mediacenter
-Version:	1.0.0
-Release:	1
 Summary:	A mediacenter user interface written with the Plasma framework
+Name:		plasma-mediacenter
+Version:	1.2.0
+Release:	1
+License:	GPLv2+
 Group:		Graphical desktop/KDE
-License:	GPLv2
-URL:		http://community.kde.org/Plasma/Plasma_Media_Center
-Source0:	ftp://ftp.kde.org/pub/kde/stable/%{name}/%{version}/src/%{name}-%{version}.tar.gz
+Url:		http://community.kde.org/Plasma/Plasma_Media_Center
+Source0:	ftp://ftp.kde.org/pub/kde/unstable/%{name}/%{version}/src/%{name}-%{version}.tar.bz2
 BuildRequires:	qt-mobility-devel
 BuildRequires:	qt4-devel
 BuildRequires:	kdelibs4-devel
+BuildRequires:	kdebase4-workspace-devel
 BuildRequires:	nepomuk-core-devel
 BuildRequires:	pkgconfig(taglib)
 Requires:	qt-mobility
@@ -16,24 +17,30 @@ Requires:	qt-mobility
 %description
 A mediacenter user interface written with the Plasma framework.
 
-%files
+%files -f %{name}.lang
 %doc README LICENSE
-%{_kde_appsdir}/plasma/packages/org.kde.plasma.mediacenter/
 %{_kde_bindir}/plasma-mediacenter
 %{_kde_applicationsdir}/plasma-mediacenter.desktop
+%{_kde_appsdir}/plasma/packages/org.kde.plasma.mediacenter/
+%{_kde_libdir}/kde4/imports/org/kde/plasma/mediacenter/
+%{_kde_libdir}/kde4/pmc_*.so
+%{_kde_iconsdir}/hicolor/*/actions/pmc-*.*
+%{_kde_iconsdir}/hicolor/*/apps/youtube-pmc.*
+%{_kde_iconsdir}/hicolor/*/status/pmcnocover.*
 %{_kde_services}/*.desktop
 %{_kde_servicetypes}/pmc_browsingbackend.desktop
-%{_kde_libdir}/kde4/imports/org/kde/plasma/mediacentercomponents/
-%{_kde_libdir}/kde4/pmc_*.so
 
 #----------------------------------------------------------------------------
 
-%define plasmamediacenter_major 0.9
+%define plasmamediacenter_major 1.2
 %define libplasmamediacenter %mklibname plasmamediacenter %{plasmamediacenter_major}
 
 %package -n %{libplasmamediacenter}
 Summary:	Shared library for %{name}
 Group:		System/Libraries
+# Useless
+Obsoletes:	%{_lib}plasmamediacenter0.9 < 1.1.0
+Obsoletes:	%{_lib}plasmamediacenter1.1 < 1.1.9
 
 %description -n %{libplasmamediacenter}
 Shared library for %{name}.
@@ -48,7 +55,7 @@ Shared library for %{name}.
 %package -n %{libplasmamediacenter_devel}
 Summary:	Development files for %{name}
 Group:		Development/KDE and Qt
-Requires:	%{libplasmamediacenter} = %{version}-%{release}
+Requires:	%{libplasmamediacenter} = %{EVRD}
 
 %description -n %{libplasmamediacenter_devel}
 Development files for %{name}.
@@ -68,4 +75,6 @@ Development files for %{name}.
 
 %install
 %makeinstall_std -C build
+
+%find_lang %{name}
 
