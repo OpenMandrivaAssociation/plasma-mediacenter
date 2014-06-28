@@ -1,16 +1,21 @@
 Summary:	A mediacenter user interface written with the Plasma framework
 Name:		plasma-mediacenter
-Version:	1.2.0
-Release:	2
+Version:	1.3.0
+Release:	1
 License:	GPLv2+
 Group:		Graphical desktop/KDE
 Url:		http://community.kde.org/Plasma/Plasma_Media_Center
 Source0:	ftp://ftp.kde.org/pub/kde/unstable/%{name}/%{version}/src/%{name}-%{version}.tar.bz2
-BuildRequires:	qt-mobility-devel
-BuildRequires:	qt4-devel
 BuildRequires:	kdelibs4-devel
 BuildRequires:	kdebase4-workspace-devel
+%if %{mdvver} < 201410
 BuildRequires:	nepomuk-core-devel
+%else
+BuildRequires:	baloo-devel
+BuildRequires:	kfilemetadata-devel
+%endif
+BuildRequires:	qt-mobility-devel
+BuildRequires:	qt4-devel
 BuildRequires:	pkgconfig(taglib)
 Requires:	qt-mobility
 
@@ -29,10 +34,11 @@ A mediacenter user interface written with the Plasma framework.
 %{_kde_iconsdir}/hicolor/*/status/pmcnocover.*
 %{_kde_services}/*.desktop
 %{_kde_servicetypes}/pmc_browsingbackend.desktop
+%{_kde_servicetypes}/pmc_mediasource.desktop
 
 #----------------------------------------------------------------------------
 
-%define plasmamediacenter_major 1.2
+%define plasmamediacenter_major 1.3
 %define libplasmamediacenter %mklibname plasmamediacenter %{plasmamediacenter_major}
 
 %package -n %{libplasmamediacenter}
@@ -41,6 +47,7 @@ Group:		System/Libraries
 # Useless
 Obsoletes:	%{_lib}plasmamediacenter0.9 < 1.1.0
 Obsoletes:	%{_lib}plasmamediacenter1.1 < 1.1.9
+Obsoletes:	%{_lib}plasmamediacenter1.2 < 1.3.0
 
 %description -n %{libplasmamediacenter}
 Shared library for %{name}.
@@ -70,7 +77,7 @@ Development files for %{name}.
 %setup -q -n plasma-mediacenter
 
 %build
-%cmake_kde4
+%cmake_kde4 -DKDE4_BUILD_TESTS=OFF
 %make
 
 %install
