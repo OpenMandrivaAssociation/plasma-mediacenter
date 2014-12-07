@@ -1,7 +1,7 @@
 Summary:	A mediacenter user interface written with the Plasma framework
 Name:		plasma-mediacenter
 Version:	1.3.0
-Release:	2
+Release:	3
 License:	GPLv2+
 Group:		Graphical desktop/KDE
 Url:		http://community.kde.org/Plasma/Plasma_Media_Center
