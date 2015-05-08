@@ -41,48 +41,34 @@ Conflicts:	plasma-mediacenter
 Plasma 5 media center.
 
 %files -f plasma-mediacenter.lang
-#%{_kde5_applicationsdir}/plasma-mediacenter.desktop
+%{_datadir}/applications/plasma-mediacenter.desktop
 %{_datadir}/xsessions/plasma-mediacenter.desktop
 %{_iconsdir}/hicolor/*/actions/pmc-back.*
-#%{_kde5_servicetypes}/pmc_browsingbackend.desktop
-#%{_kde5_servicetypes}/pmc_mediasource.desktop
-#%{_qt5_plugindir}/plasma/mediacenter/browsingbackends/pmc_metadatamusicbackend.so
-#%{_qt5_plugindir}/plasma/mediacenter/browsingbackends/pmc_metadatapicturebackend.so
-#%{_qt5_plugindir}/plasma/mediacenter/browsingbackends/pmc_metadatavideobackend.so
-#%{_qt5_plugindir}/plasma/mediacenter/mediasources/pmc_baloosearch.so
-#%{_qt5_plugindir}/plasma/mediacenter/mediasources/pmc_filesystemsearch.so
+%{_datadir}/kservicetypes5/pmc_browsingbackend.desktop
+%{_datadir}/kservicetypes5/pmc_mediasource.desktop
+%{_libdir}/qt5/plugins/plasma/mediacenter/browsingbackends/pmc_metadatamusicbackend.so
+%{_libdir}/qt5/plugins/plasma/mediacenter/browsingbackends/pmc_metadatapicturebackend.so
+%{_libdir}/qt5/plugins/plasma/mediacenter/browsingbackends/pmc_metadatavideobackend.so
+%{_libdir}/qt5/plugins/plasma/mediacenter/mediasources/pmc_baloosearch.so
+%{_libdir}/qt5/plugins/plasma/mediacenter/mediasources/pmc_filesystemsearch.so
+%dir %{_libdir}/qt5/qml/org/kde/plasma/mediacenter/
+%{_libdir}/qt5/qml/org/kde/plasma/mediacenter/*
 
 #----------------------------------------------------------------------------
 
-%package -n plasma5-shell-mediacenter
+%package -n plasma-shell-mediacenter
 Summary:	Plasma 5 media center shell
 Group:		Graphical desktop/KDE
 # Not sure if it's required
 Suggests:	%{name}
 
-%description -n plasma5-shell-mediacenter
+%description -n plasma-shell-mediacenter
 Plasma 5 media center shell.
 
-%files -n plasma5-shell-mediacenter -f plasma_shell_org.kde.plasma.mediacenter.lang
+%files -n plasma-shell-mediacenter -f plasma_shell_org.kde.plasma.mediacenter.lang
 %dir %{_datadir}/plasma/shells/org.kde.plasma.mediacenter/
 %{_datadir}/plasma/shells/org.kde.plasma.mediacenter/*
-#%{_kde5_services}/plasma-shell-org.kde.plasma.mediacenter.desktop
-
-#----------------------------------------------------------------------------
-
-%define qmlplasma_mediacenter %mklibname plasma-mediacenter-qml
-
-%package -n %{qmlplasma_mediacenter}
-Summary:	QML plugins for Plasma 5 media center
-Group:		System/Libraries
-Provides:	plasma-mediacenter-qml = %{EVRD}
-
-%description -n %{qmlplasma_mediacenter}
-QML plugins for Plasma 5 media center.
-
-%files -n %{qmlplasma_mediacenter}
-#%dir %{_kde5_qmldir}/org/kde/plasma/mediacenter/
-#%{_kde5_qmldir}/org/kde/plasma/mediacenter/*
+%{_datadir}/kservices5/plasma-shell-org.kde.plasma.mediacenter.desktop
 
 #----------------------------------------------------------------------------
 
@@ -92,7 +78,7 @@ QML plugins for Plasma 5 media center.
 %package -n %{libplasmamediacenter}
 Summary:	Plasma 5 media center shared library
 Group:		System/Libraries
-Requires:	plasma-mediacenter-qml
+Requires:	%{name} = %{EVRD}
 
 %description -n %{libplasmamediacenter}
 Plasma 5 media center shared library.
