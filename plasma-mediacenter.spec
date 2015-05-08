@@ -35,7 +35,6 @@ BuildRequires:	pkgconfig(Qt5Xml)
 BuildRequires:	pkgconfig(taglib)
 Requires:	plasma-shell-mediacenter
 Requires:	plasma-workspace
-Conflicts:	plasma-mediacenter
 
 %description
 Plasma 5 media center.
