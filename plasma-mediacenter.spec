@@ -54,7 +54,7 @@ Shared library for %{name}.
 
 %files -n %{libplasmamediacenter}
 %{_kde_libdir}/libplasmamediacenter.so.%{plasmamediacenter_major}*
-%{_kde_libdir}/libplasmamediaadapter.so.%{plasmamediacenter_major}*
+%{_kde_libdir}/libplasmaadapter.so.%{plasmamediacenter_major}*
 
 #----------------------------------------------------------------------------
 
@@ -71,7 +71,7 @@ Development files for %{name}.
 %files -n %{libplasmamediacenter_devel}
 %{_kde_includedir}/mediacenter/
 %{_kde_libdir}/libplasmamediacenter.so
-%{_kde_libdir}/libplasmamediaadapter.so
+%{_kde_libdir}/libplasmaadapter.so
 
 #----------------------------------------------------------------------------
 
