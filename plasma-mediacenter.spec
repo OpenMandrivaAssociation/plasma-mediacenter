@@ -1,7 +1,7 @@
 Summary:	A mediacenter user interface written with the Plasma framework
 Name:		plasma-mediacenter
 Version:	1.3.0
-Release:	2
+Release:	3
 License:	GPLv2+
 Group:		Graphical desktop/KDE
 Url:		http://community.kde.org/Plasma/Plasma_Media_Center
@@ -55,6 +55,7 @@ Shared library for %{name}.
 %files -n %{libplasmamediacenter}
 %{_kde_libdir}/libplasmamediacenter.so.%{plasmamediacenter_major}*
 %{_kde_libdir}/libplasmaadapter.so.%{plasmamediacenter_major}*
+%{_kde_libdir}/libplasmaadapter.so
 
 #----------------------------------------------------------------------------
 
@@ -71,7 +72,6 @@ Development files for %{name}.
 %files -n %{libplasmamediacenter_devel}
 %{_kde_includedir}/mediacenter/
 %{_kde_libdir}/libplasmamediacenter.so
-%{_kde_libdir}/libplasmaadapter.so
 
 #----------------------------------------------------------------------------
 
