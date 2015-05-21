@@ -1,11 +1,12 @@
 Summary:	A mediacenter user interface written with the Plasma framework
 Name:		plasma-mediacenter
 Version:	1.3.0
-Release:	3
+Release:	4
 License:	GPLv2+
 Group:		Graphical desktop/KDE
 Url:		http://community.kde.org/Plasma/Plasma_Media_Center
-Source0:	ftp://ftp.kde.org/pub/kde/unstable/%{name}/%{version}/src/%{name}-%{version}.tar.bz2
+Source0:	http://download.kde.org/stable/%{name}/%{version}/src/%{name}-%{version}.tar.bz2
+Patch1:		plasma-mediacenter-1.3-adaptor_soname.patch
 BuildRequires:	kdelibs4-devel
 BuildRequires:	kdebase4-workspace-devel
 %if %{mdvver} < 201410
@@ -55,7 +56,6 @@ Shared library for %{name}.
 %files -n %{libplasmamediacenter}
 %{_kde_libdir}/libplasmamediacenter.so.%{plasmamediacenter_major}*
 %{_kde_libdir}/libplasmaadapter.so.%{plasmamediacenter_major}*
-%{_kde_libdir}/libplasmaadapter.so
 
 #----------------------------------------------------------------------------
 
@@ -72,11 +72,13 @@ Development files for %{name}.
 %files -n %{libplasmamediacenter_devel}
 %{_kde_includedir}/mediacenter/
 %{_kde_libdir}/libplasmamediacenter.so
+%{_kde_libdir}/libplasmaadapter.so
 
 #----------------------------------------------------------------------------
 
 %prep
 %setup -q -n plasma-mediacenter
+%apply_patches
 
 %build
 %cmake_kde4 -DKDE4_BUILD_TESTS=OFF -DNO_LINK_TO_PLASMA=ON
