@@ -9,7 +9,7 @@ Group:		Graphical desktop/KDE
 Url:		https://www.kde.org/
 Source0:	http://download.kde.org/%{stable}/plasma/%{version}/%{name}-%{version}.tar.xz
 BuildRequires:	cmake(ECM)
-BuildRequires:	cmake(KF5ActivitiesConfig)
+BuildRequires:	cmake(KF5Activities)
 BuildRequires:	cmake(KF5Baloo)
 BuildRequires:	cmake(KF5Config)
 BuildRequires:	cmake(KF5ConfigWidgets)
