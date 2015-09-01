@@ -3,7 +3,7 @@
 Summary:	Plasma 5 media center
 Name:		plasma-mediacenter
 Version:	5.4.0
-Release:	1
+Release:	2
 License:	GPLv2+
 Group:		Graphical desktop/KDE
 Url:		https://www.kde.org/
@@ -36,6 +36,7 @@ BuildRequires:	pkgconfig(Qt5Xml)
 BuildRequires:	pkgconfig(taglib)
 Requires:	plasma-shell-mediacenter
 Requires:	plasma-workspace
+Requires:	qt5-qtmultimedia
 
 %description
 Plasma 5 media center.
