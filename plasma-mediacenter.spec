@@ -2,7 +2,7 @@
 
 Summary:	Plasma 5 media center
 Name:		plasma-mediacenter
-Version:	5.4.3
+Version:	5.5.0
 Release:	1
 License:	GPLv2+
 Group:		Graphical desktop/KDE
