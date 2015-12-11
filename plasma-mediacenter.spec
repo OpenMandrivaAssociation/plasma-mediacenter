@@ -45,13 +45,12 @@ Plasma 5 media center.
 %{_datadir}/applications/plasma-mediacenter.desktop
 %{_datadir}/xsessions/plasma-mediacenter.desktop
 %{_iconsdir}/hicolor/*/actions/pmc-back.*
-%{_datadir}/kservicetypes5/pmc_browsingbackend.desktop
-%{_datadir}/kservicetypes5/pmc_mediasource.desktop
+%{_datadir}/kservicetypes5/*.desktop
 %{_libdir}/qt5/plugins/plasma/mediacenter/browsingbackends/pmc_metadatamusicbackend.so
 %{_libdir}/qt5/plugins/plasma/mediacenter/browsingbackends/pmc_metadatapicturebackend.so
 %{_libdir}/qt5/plugins/plasma/mediacenter/browsingbackends/pmc_metadatavideobackend.so
-%{_libdir}/qt5/plugins/plasma/mediacenter/mediasources/pmc_baloosearch.so
-%{_libdir}/qt5/plugins/plasma/mediacenter/mediasources/pmc_filesystemsearch.so
+%{_libdir}/qt5/plugins/plasma/mediacenter/datasources/pmc_baloosearch.so
+%{_libdir}/qt5/plugins/plasma/mediacenter/datasources/pmc_filesystemsearch.so
 %dir %{_libdir}/qt5/qml/org/kde/plasma/mediacenter/
 %{_libdir}/qt5/qml/org/kde/plasma/mediacenter/*
 
