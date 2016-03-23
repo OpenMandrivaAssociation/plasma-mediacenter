@@ -51,6 +51,7 @@ Plasma 5 media center.
 %{_libdir}/qt5/plugins/plasma/mediacenter/browsingbackends/pmc_metadatavideobackend.so
 %{_libdir}/qt5/plugins/plasma/mediacenter/datasources/pmc_baloosearch.so
 %{_libdir}/qt5/plugins/plasma/mediacenter/datasources/pmc_filesystemsearch.so
+%{_libdir}/qt5/plugins/plasma/mediacenter/datasources/pmc_lastfm.so
 %dir %{_libdir}/qt5/qml/org/kde/plasma/mediacenter/
 %{_libdir}/qt5/qml/org/kde/plasma/mediacenter/*
 
