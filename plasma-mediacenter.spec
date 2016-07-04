@@ -2,7 +2,7 @@
 
 Summary:	Plasma 5 media center
 Name:		plasma-mediacenter
-Version:	5.6.5
+Version:	5.7.0
 Release:	1
 License:	GPLv2+
 Group:		Graphical desktop/KDE
@@ -100,5 +100,5 @@ Plasma 5 media center shared library.
 %install
 %ninja_install -C build
 
-%find_lang plasma-mediacenter
-%find_lang plasma_shell_org.kde.plasma.mediacenter
+%find_lang plasma-mediacenter || touch plasma-mediacenter.lang
+%find_lang plasma_shell_org.kde.plasma.mediacenter || touch plasma_shell_org.kde.plasma.mediacenter.lang
