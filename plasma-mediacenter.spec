@@ -85,8 +85,7 @@ Requires:	%{name} = %{EVRD}
 Plasma 5 media center shared library.
 
 %files -n %{libplasmamediacenter}
-%{_libdir}/libplasmamediacenter.so.%{plasmamediacenter_major}
-%{_libdir}/libplasmamediacenter.so.%{version}
+%{_libdir}/libplasmamediacenter.so.%{plasmamediacenter_major}*
 
 #----------------------------------------------------------------------------
 
